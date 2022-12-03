@@ -37,43 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #Librarys
     'corsheaders',
+    'rest_framework',
+
+    #Models
+    'Aplications.User',
     
-
-    #Adopcion
-    'Aplicaciones.Adopcion',
-    #Caracteristicas
-    'Aplicaciones.Caracteristicas.Caracteristica',
-    'Aplicaciones.Caracteristicas.TipoCaracteristica',
-    #Cursos
-    'Aplicaciones.Cursos.Curso',
-    'Aplicaciones.Cursos.PreguntaCurso',
-    'Aplicaciones.Cursos.RespuestaCurso',
-    'Aplicaciones.Cursos.TipoCurso',
-    #FAQ
-    'Aplicaciones.FAQ.Faq',
-    'Aplicaciones.FAQ.FaqTemas',
-    #Mascotas
-    'Aplicaciones.Mascotas.Mascota',
-    'Aplicaciones.Mascotas.TipoMascota',
-    #Notificaciones
-    'Aplicaciones.Notificaciones.Notificacion',
-    'Aplicaciones.Notificaciones.TipoNotificacion',
-    #Productos
-    'Aplicaciones.Productos.Producto',
-    'Aplicaciones.Productos.ProductoObtenido',
-    'Aplicaciones.Productos.TipoProducto',
-    #TimeLine
-    'Aplicaciones.TimeLine.Timeline',
-    'Aplicaciones.TimeLine.Fase',
-    #Usuarios
-    'Aplicaciones.Usuarios.Usuario',
-    'Aplicaciones.Usuarios.Rolsuario',
-    #Vacunas
-    'Aplicaciones.Vacunas.Vacuna',
-    'Aplicaciones.Vacunas.TipoVacuna',
-
-
     
 
 ]
