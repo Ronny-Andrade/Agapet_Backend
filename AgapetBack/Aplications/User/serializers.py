@@ -3,7 +3,6 @@ from .models import User, Rol_User
 
 # Serializer from model user
 class UserSerializer(serializers.ModelSerializer):
-   
     class Meta:
         model = User
         fields = '__all__'
@@ -16,7 +15,6 @@ class UserSerializer(serializers.ModelSerializer):
 
 # Serializer from model rol_user       
 class Rol_UserSerializer(serializers.ModelSerializer):
-    
     class Meta:
         model = Rol_User
         fields = '__all__'
