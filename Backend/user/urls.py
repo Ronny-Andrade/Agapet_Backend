@@ -7,9 +7,9 @@ urlpatterns = [
     path('user', UserView.as_view()),
     path('logout', LogoutView.as_view()),
     path('list', UserList.as_view()),
-    path('user-detail/<str:pk>/', Userid.as_view()),
-    path('user-update/<str:pk>/', Userupdate.as_view()),
-    path('user-delete/<str:pk>/', Userdelete.as_view())    
+    path('detail/<str:pk>/', Userid.as_view()),
+    path('update/<str:pk>/', Userupdate.as_view()),
+    path('delete/<str:pk>/', Userdelete.as_view())    
     
     
 ]
