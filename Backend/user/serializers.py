@@ -21,3 +21,9 @@ class RegisterSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
         
+
+class UserUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['phone','direction','image']
+        

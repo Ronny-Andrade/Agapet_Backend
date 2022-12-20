@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 import jwt, datetime
 # Serializers
-from .serializers import UserSerializer, RegisterSerializer
+from .serializers import UserSerializer, RegisterSerializer, UserUpdateSerializer
 # Models
 from .models import User
 
@@ -37,7 +37,7 @@ class UserView(APIView):
 class Userupdate(APIView):
     def put(self, request):
         user = User.objects.get(id=request.user.iduser)
-        serializer = UserSerializer(instance=user, data=request.data)
+        serializer = UserUpdateSerializer(instance=user, data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
