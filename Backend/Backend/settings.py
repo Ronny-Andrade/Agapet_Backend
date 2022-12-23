@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-2qxi%u_yq@omdsuy=4fp4e7)yq6=e-69+9qf(g2su#&=!^w!89
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -58,7 +58,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Backend.urls'
+
 CORS_ORIGIN_ALLOW_ALL = True
+
 
 TEMPLATES = [
     {
@@ -136,8 +138,8 @@ REST_FRAMEWORK = {
 
 SIMPLE_JWT = {
     'USER_ID_FIELD': 'iduser',
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=10),
-    'TOKEN_REFRESH_LIFETIME': timedelta(days=30)
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
+    'TOKEN_REFRESH_LIFETIME': timedelta(days=60)
 }
 
 
