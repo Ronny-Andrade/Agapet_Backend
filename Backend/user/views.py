@@ -33,10 +33,19 @@ class UserView(APIView):
     def get(self, request):
         serializar = UserSerializer(request.user)
         return Response(serializar.data)
+    
+    def put(self, request):
+        user = User.objects.get(iduser=request.user.iduser)
+        serializer = UserUpdateSerializer(instance=user, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class Userupdate(APIView):
     def put(self, request):
-        user = User.objects.get(id=request.user.iduser)
+        user = User.objects.get(iduser=request.user.iduser)
         serializer = UserUpdateSerializer(instance=user, data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()

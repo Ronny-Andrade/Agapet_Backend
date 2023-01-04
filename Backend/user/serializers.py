@@ -25,5 +25,5 @@ class RegisterSerializer(serializers.ModelSerializer):
 class UserUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['phone','direction','image']
+        fields = ['phone','direction','image', 'age']
         
