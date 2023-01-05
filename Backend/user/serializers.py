@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import User
 
+
 # Serializer from model user
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -26,4 +27,12 @@ class UserUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['phone','direction','image', 'age']
+
+
+
+
+        
+
+    
+    
         

@@ -11,6 +11,7 @@ import jwt, datetime
 from .serializers import UserSerializer, RegisterSerializer, UserUpdateSerializer
 # Models
 from .models import User
+# Mascotas
 
 class RegisterView(APIView):
     def post(self, request):
@@ -34,13 +35,6 @@ class UserView(APIView):
         serializar = UserSerializer(request.user)
         return Response(serializar.data)
     
-    def put(self, request):
-        user = User.objects.get(iduser=request.user.iduser)
-        serializer = UserUpdateSerializer(instance=user, data=request.data)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class Userupdate(APIView):
@@ -51,5 +45,4 @@ class Userupdate(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
