@@ -13,7 +13,7 @@ class Animal(models.Model):
         return self.info_completa()
     
     class Meta:
-        db_table = 'Animal'
+        db_table = 'animal'
 
 
 # Create your models here.
@@ -32,6 +32,7 @@ class Mascota(models.Model):
     genero = models.CharField(max_length=1, choices=opcion_genero)
     estado = models.CharField(max_length=25)
     descripcion = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='media/pet', blank=True, null=True)
     edad = models.PositiveIntegerField()
     peso = models.FloatField()
     comida = models.CharField(max_length=50)
@@ -60,6 +61,10 @@ class Mascota(models.Model):
         return self.all_info_user()
     
     class Meta:
-        verbose_name='Pet'
-        verbose_name_plural='Pets'
-        db_table = 'pet'
+        verbose_name='Mascota'
+        verbose_name_plural='Mascotas'
+        db_table = 'mascota'
+
+
+
+

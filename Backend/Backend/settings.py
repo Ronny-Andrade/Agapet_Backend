@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'rest_framework',
     #Models
     'user',
-    'pet'
+    'pet',
+    'vacuna'
 ]
 
 MIDDLEWARE = [

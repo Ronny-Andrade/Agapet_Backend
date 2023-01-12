@@ -7,6 +7,6 @@ router_mascota = routers.DefaultRouter()
 router_mascota.register(prefix='mascota', basename='mascota', viewset=MascotaViewSet)
 
 urlpatterns = [
-    path('usuarioMascota/<str:pk>/', UsuarioMascotaViewSet.as_view()),
+    path('usuario/<str:pk>/', UsuarioMascotaViewSet.as_view()),
     
 ]
