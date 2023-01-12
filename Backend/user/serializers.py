@@ -26,12 +26,13 @@ class RegisterSerializer(serializers.ModelSerializer):
 class UserUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['phone','direction', 'age']
+        fields = ['phone','direction', 'age','imagen64']
 
 class ImageUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['imagen64']
+
 
 
 
