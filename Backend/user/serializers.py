@@ -6,7 +6,7 @@ from .models import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['iduser','name','email','phone','direction', 'age','points','image']
+        fields = ['iduser','name','email','phone','direction', 'age','points','image','imagen64']
         
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -26,7 +26,12 @@ class RegisterSerializer(serializers.ModelSerializer):
 class UserUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['phone','direction','image', 'age']
+        fields = ['phone','direction', 'age']
+
+class ImageUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['imagen64']
 
 
 

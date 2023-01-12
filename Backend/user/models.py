@@ -33,16 +33,16 @@ class User(AbstractUser):
     phone = models.CharField(max_length=45, blank=True, null=True)
     age = models.PositiveIntegerField( blank=True, null=True)
     points = models.PositiveIntegerField( blank=True, null=True)
-    image = models.ImageField(upload_to='media/user', null=True)
+    image = models.ImageField(upload_to='media/user', blank=True,null=True)
+    imagen64 = models.TextField(blank=True, null=True)
     username = None
-
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
     objects = UserManager()
 
     def all_info_user(self):
-        return '{}'.format(self.iduser, self.name, self.email,self.direction,self.phone,self.age,self.points,self.image)
+        return '{}'.format(self.iduser, self.name, self.email,self.direction,self.phone,self.age,self.points,self.image, self.imagen64)
 
     def __str__(self):
         return self.all_info_user()
