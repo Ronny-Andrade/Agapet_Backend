@@ -21,12 +21,12 @@ class Vacuna_Mascota(models.Model):
     vacuna_mascota_id = models.AutoField(primary_key=True)
     vacuna_id = models.ForeignKey(Vacuna, on_delete=models.CASCADE)
     idpet = models.ForeignKey(Mascota, on_delete=models.CASCADE)
-    imagen_blob = models.BinaryField(blank=True, null=True) 
+    imagen64 = models.TextField(blank=True, null=True)
     feche_inicio = models.DateField(blank=True, null=True)
     feche_fin = models.DateField(blank=True, null=True)
 
     def info_completa(self):
-        return "{}".format(self.vacuna_mascota_id,self.vacuna_id, self.idpet, self.feche_inicio, self.feche_fin, self.imagen_blob)
+        return "{}".format(self.vacuna_mascota_id,self.vacuna_id, self.idpet, self.feche_inicio, self.feche_fin, self.imagen64)
 
     def __str__(self):
         return self.info_completa()
