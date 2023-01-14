@@ -11,6 +11,7 @@ class Vacuna(models.Model):
     nombre_vacuna = models.CharField(max_length=200)
     descripcion_vacuna = models.CharField(max_length=200)
     imagen64 = models.TextField(blank=True, null=True)
+    lugar_vacuna = models.CharField(max_length=100,blank=True, null=True)
     fecha = models.DateField(blank=True, null=True)
     
     def info_completa(self):
