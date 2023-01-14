@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .models import Vacuna, Vacuna_Mascota
-from .serializer import VacunaMascotaSerializer, VacunaSerializer
+from .models import Vacuna
+from .serializer import VacunaSerializer
 # otras importaciones
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -9,6 +9,6 @@ from rest_framework.response import Response
 
 class VacunasMascotaViewSet(APIView):
     def get(self, request,pk):
-        vacuna_mascota = Vacuna_Mascota.objects.get(idpet=pk)
-        serializers = VacunaMascotaSerializer(vacuna_mascota, many=False)
+        vacuna_mascota = Vacuna.objects.get(iduser=pk)
+        serializers = VacunaSerializer(vacuna_mascota, many=False)
         return Response(serializers.data)
