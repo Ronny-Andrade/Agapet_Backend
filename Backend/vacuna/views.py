@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Vacuna
-from .serializer import VacunaSerializer
+from .serializer import VacunaSerializer, VacunaUpdateSerializer
 # otras importaciones
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import status
 # Create your views here.
 
 
@@ -16,3 +17,14 @@ class VacunasMascotaViewSet(APIView):
             queryset = queryset.filter(iduser=id_user)
         serializers = VacunaSerializer(queryset, many=True)
         return Response(serializers.data)
+
+class Mascotaupdate(APIView):
+    def put(self, request, pk):
+        vacuna = Vacuna.objects.get(vacuna_id=pk)
+        serializer = VacunaUpdateSerializer(instance=vacuna, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+

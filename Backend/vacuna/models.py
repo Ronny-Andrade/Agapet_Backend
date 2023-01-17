@@ -9,7 +9,7 @@ class Vacuna(models.Model):
     idpet = models.ForeignKey(Mascota, on_delete=models.CASCADE, null=True)
     iduser =  models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     nombre_vacuna = models.CharField(max_length=200)
-    descripcion_vacuna = models.CharField(max_length=200)
+    descripcion_vacuna = models.CharField(max_length=200,blank=True, null=True)
     imagen64 = models.TextField(blank=True, null=True)
     lugar_vacuna = models.CharField(max_length=100,blank=True, null=True)
     fecha = models.DateField(blank=True, null=True)

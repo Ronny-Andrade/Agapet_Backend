@@ -6,3 +6,8 @@ class VacunaSerializer(serializers.ModelSerializer):
          model = Vacuna
          fields= '__all__'
 
+
+class VacunaUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+         model = Vacuna
+         fields= ['lugar_vacuna','fecha','imagen64','descripcion_vacuna']
