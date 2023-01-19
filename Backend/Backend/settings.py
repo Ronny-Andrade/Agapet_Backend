@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     #Models
     'user',
     'pet',
-    'vacuna'
+    'vacuna',
+    'timeline'
 ]
 
 MIDDLEWARE = [
