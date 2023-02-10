@@ -10,6 +10,7 @@ urlpatterns = [
     path('mascota/', include('pet.urls')),
     path('vacuna/', include('vacuna.urls')),
     path('timeline/', include('timeline.urls')),
+    path('faq/', include('faq.urls')),
     path('api/', include(router_mascota.urls)),
 
 ]
