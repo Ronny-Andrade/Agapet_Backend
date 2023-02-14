@@ -16,12 +16,12 @@ class Tema(models.Model):
 
 class Faq(models.Model):
     faqid = models.AutoField(primary_key=True)
-    temaid = models.ForeignKey('Tema', on_delete=models.CASCADE)
+    tema = models.ForeignKey('Tema', on_delete=models.CASCADE)
     pregunta = models.CharField(max_length=100, blank=True, null=True )
     respuesta = models.CharField(max_length=100, blank=True, null=True)
 
     def info_completa(self):
-        return "{}".format(self.faqid,self.temaid, self.pregunta, self.respuesta)
+        return "{}".format(self.faqid, self.pregunta, self.respuesta, self.tema)
 
     def __str__(self):
         return self.info_completa()
