@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'pet',
     'vacuna',
     'timeline',
-    'faq'
+    'faq',
+    'recompensa'
 ]
 
 MIDDLEWARE = [
@@ -157,5 +158,14 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = "user.User"
+
+#Email Config
+EMAIL_HOST = '<smtp-mail.outlook.com>'
+EMAIL_HOST_USER = 'ronny_1501@hotmail.com'
+EMAIL_HOST_PASSWORD ='r0978982538*'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_TIMEOUT = 300 
+DEFAULT_FROM_EMAIL = 'ronny_1501@hotmail.com'
 
 
